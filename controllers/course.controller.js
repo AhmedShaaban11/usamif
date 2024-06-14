@@ -101,7 +101,7 @@ const listFavCourses = async (req, res) => {
         const user = await User.findById(req.params.userId);
         if (!user) { return res.sendStatus(404); }
         const courses = await Course.find({ _id: { $in: user.favCourses } });
-        res.status(200).send(courses);
+        res.render('fav_courses', { courses });
     } catch (err) {
         res.status(500).send(err.message);
     }

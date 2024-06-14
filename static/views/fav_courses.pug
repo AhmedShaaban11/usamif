@@ -1,0 +1,11 @@
+extends layout.pug 
+
+block content 
+    h2 Favorite Courses 
+    each course in courses 
+        div
+            h2 #{course.name}
+            p #{course.rating}
+            p #{course.description}
+            button(type='button') Unlike
+            a(href=`/api/courses/${course.id}`) View course
