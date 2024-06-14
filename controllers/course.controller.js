@@ -70,7 +70,7 @@ const readCourse = async (req, res) => {
 const listCourses = async (req, res) => {
     try {
         const courses = await Course.find();
-        res.status(200).send(courses);
+        res.render('index', { courses });
     } catch (err) {
         res.status(500).send(err.message);
     }

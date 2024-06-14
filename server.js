@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -6,6 +7,9 @@ const cookieParser = require('cookie-parser');
 const userRoute = require('./routes/user.route.js');
 const courseRoute = require('./routes/course.route.js');
 const refreshTokenRoute = require('./routes/refresh.token.route.js');
+
+app.set('views', path.join(__dirname, 'static/views'));
+app.set('view engine', 'pug');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h2 Latest Courses 
+    each course in courses 
+        div
+            h2 
+                a(href=`/courses/${course.id}`) #{course.name}
+            p #{course.rating}
+            p #{course.description}
+            button(type='button') Like
+            a(href=`/courses/${course.id}`) View course
+    h2 Recommended Courses
+    each course in courses 
+        div
+            h2 
+                a(href=`/courses/${course.id}`) #{course.name}
+            p #{course.rating}
+            p #{course.description}
+            button(type='button') Like
+            a(href=`/courses/${course.id}`) View course
