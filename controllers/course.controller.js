@@ -61,7 +61,9 @@ const readCourse = async (req, res) => {
     try {
         const course = await Course.findById(req.params.courseId);
         if (!course) { return res.sendStatus(404); }
-        res.status(200).send(course);
+        // add the username of the user who wrote each review
+        await course.populate('reviews.userId', 'username');
+        res.render('course', { course });
     } catch (err) {
         res.status(500).send(err.message);
     }
