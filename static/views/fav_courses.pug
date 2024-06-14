@@ -1,5 +1,8 @@
 extends layout.pug 
 
+block 
+    link(rel='stylesheet' href='static/styles/global.css')
+
 block content 
     h2 Favorite Courses 
     each course in courses 

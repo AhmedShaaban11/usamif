@@ -1,0 +1,15 @@
+.box {
+    width: 400px;
+}
+
+.review-form {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.review {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;  
+    text-align: center;
+}

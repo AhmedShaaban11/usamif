@@ -11,13 +11,10 @@ const refreshTokenRoute = require('./routes/refresh.token.route.js');
 app.set('views', path.join(__dirname, 'static/views'));
 app.set('view engine', 'pug');
 
+app.use('*/static', express.static(path.join(__dirname, 'static')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
 
 app.use('/api/refresh', refreshTokenRoute);
 app.use('/api/users/', userRoute);

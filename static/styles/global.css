@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -5,7 +10,6 @@ body {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    font-family: sans-serif;
 }
 
 footer {
