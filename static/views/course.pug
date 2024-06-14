@@ -1,7 +1,10 @@
-extends layout 
+extends layout
+
+//- block variables 
+//-     - var isUserLoggedIn = true
+
 
 block relsheets 
-    link(rel='stylesheet' href='static/styles/global.css')
     link(rel='stylesheet' href='static/styles/course.css')
 
 block content 
@@ -9,6 +12,7 @@ block content
         h1 #{course.name}
         p Total Rating: #{course.rating}/5
         p #{course.description}
+        button(type='button') Like
         h2 Leave a Review
         form(action=`api/courses/review`, method='POST').review-form
             input(type='number', name='rating', placeholder='Rating' min='1' max='5')

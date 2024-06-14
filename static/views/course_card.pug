@@ -1,0 +1,6 @@
+div.card
+    h2 #{course.name}
+    p Total Rating: #{course.rating}/5
+    p #{course.description}
+    button(type='button') Like
+    a(href=`/api/courses/${course.id}`).link View course

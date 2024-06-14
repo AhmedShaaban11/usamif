@@ -1,14 +1,13 @@
 extends layout.pug 
 
+block variables 
+    - var isUserLoggedIn = true
+
 block 
-    link(rel='stylesheet' href='static/styles/global.css')
+    link(rel='stylesheet' href='static/styles/course_card.css')
 
 block content 
-    h2 Favorite Courses 
-    each course in courses 
-        div
-            h2 #{course.name}
-            p #{course.rating}
-            p #{course.description}
-            button(type='button') Unlike
-            a(href=`/api/courses/${course.id}`) View course
+    h1 Favorite Courses 
+    div.cards
+        each course in courses 
+            include course_card.pug

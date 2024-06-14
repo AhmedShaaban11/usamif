@@ -1,7 +1,9 @@
 extends layout 
 
+block variables 
+    - var isUserLoggedIn = false
+
 block relsheets 
-    link(rel='stylesheet' href='static/styles/global.css')
     link(rel='stylesheet' href='static/styles/form.css')
 
 block content 
