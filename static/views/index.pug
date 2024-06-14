@@ -9,9 +9,9 @@ block relsheets
 block content
     h1 Latest Courses 
     div.cards
-        each course in courses 
+        each course in latestCourses 
             include course_card.pug
     h1 Recommended Courses
     div.cards
-        each course in courses 
+        each course in recommendedCourses 
             include course_card.pug

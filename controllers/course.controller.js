@@ -71,7 +71,7 @@ const readCourse = async (req, res) => {
 const listCourses = async (req, res) => {
     try {
         const courses = await Course.find();
-        res.render('index', { courses });
+        res.render('index', { latestCourses: courses, recommendedCourses: courses });
     } catch (err) {
         res.status(500).send(err.message);
     }

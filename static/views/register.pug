@@ -4,24 +4,39 @@ block variables
     - var isUserLoggedIn = false
 
 block relsheets 
-    link(rel='stylesheet' href='static/styles/form.css')
+    link(rel='stylesheet' href='static/styles/register.css')
+
+block scripts 
+    script(src='static/scripts/register.js' defer)
 
 block content 
-    h1 Sign Up 
-    form(action='/api/users/signup' method='POST')
-        div.field
-            label(for='first-name-input') First Name
-            input(type='text' placeholder='first-name' name='first-name', id='first-name-input')
-        div.field
-            label(for='last-name-input') Last Name
-            input(type='text' placeholder='last-name' name='last-name', id='last-name-input')
-        div.field
-            label(for='username-input') Username
-            input(type='text' placeholder='Username' name='username', id='username-input')
-        div.field
-            label(for='email-input') Email
-            input(type='email' placeholder='email' name='email', id='email-input')
-        div.field
-            label(for='password-input') Password
-            input(type='password' placeholder='Password' name='password', id='password-input')
-        button(type='submit') Submit
+    div.btns
+        button(type='button')#login-btn Login
+        button(type='button')#signup-btn SignUp
+    div.box#login-box
+        form(action='/api/users/login' method='POST')
+            div.field
+                label(for='username-input') Username
+                input(type='text' placeholder='Username' name='username', id='username-input')
+            div.field
+                label(for='password-input') Password
+                input(type='password' placeholder='Password' name='password', id='password-input')
+            button(type='submit') Submit
+    div.box#signup-box
+        form(action='/api/users/signup' method='POST')
+            div.field
+                label(for='first-name-input') First Name
+                input(type='text' placeholder='first-name' name='first-name', id='first-name-input')
+            div.field
+                label(for='last-name-input') Last Name
+                input(type='text' placeholder='last-name' name='last-name', id='last-name-input')
+            div.field
+                label(for='username-input') Username
+                input(type='text' placeholder='Username' name='username', id='username-input')
+            div.field
+                label(for='email-input') Email
+                input(type='email' placeholder='email' name='email', id='email-input')
+            div.field
+                label(for='password-input') Password
+                input(type='password' placeholder='Password' name='password', id='password-input')
+            button(type='submit') Submit

@@ -14,6 +14,6 @@
     transition: box-shadow 0.3s;
 }
 
-.card .link {
-    margin-left: 10px;
+.card button {
+    margin-right: 10px;
 }
